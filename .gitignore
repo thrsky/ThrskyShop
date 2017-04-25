@@ -1,0 +1,25 @@
+*.class
+
+#package file
+*.war
+*.ear
+
+#maven file
+target/
+
+#idea
+.idea/
+/idea/
+*.ipr
+*.iml
+*.iws
+
+#temp file
+*.log
+*.cache
+*.tmp
+
+#system ingore
+
+Thumbs.db
+
