@@ -18,8 +18,8 @@
 
         <jdbcConnection driverClass="${db.driverClassName}"
                         connectionURL="${db.url}"
-                        userId="db.username"
-                        password="db.password">
+                        userId="${db.username}"
+                        password="${db.password}">
         </jdbcConnection>
 
         <!-- 类型处理器  在数据库和POJO之间的数据类型转换控制-->
