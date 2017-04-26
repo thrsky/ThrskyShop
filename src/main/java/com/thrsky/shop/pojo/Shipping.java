@@ -141,4 +141,22 @@ public class Shipping {
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
     }
+
+    @Override
+    public String toString() {
+        return "Shipping{" +
+                "id=" + id +
+                ", userId=" + userId +
+                ", receiverName='" + receiverName + '\'' +
+                ", receiverPhone='" + receiverPhone + '\'' +
+                ", receiverMobile='" + receiverMobile + '\'' +
+                ", receiverProvince='" + receiverProvince + '\'' +
+                ", receiverCity='" + receiverCity + '\'' +
+                ", receiverDistrict='" + receiverDistrict + '\'' +
+                ", receiverAddress='" + receiverAddress + '\'' +
+                ", receiverZip='" + receiverZip + '\'' +
+                ", createTime=" + createTime +
+                ", updateTime=" + updateTime +
+                '}';
+    }
 }

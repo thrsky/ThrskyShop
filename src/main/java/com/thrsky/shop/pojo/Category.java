@@ -86,4 +86,17 @@ public class Category {
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
     }
+
+    @Override
+    public String toString() {
+        return "Category{" +
+                "id=" + id +
+                ", parentId=" + parentId +
+                ", name='" + name + '\'' +
+                ", status=" + status +
+                ", sortOrder=" + sortOrder +
+                ", createTime=" + createTime +
+                ", updateTime=" + updateTime +
+                '}';
+    }
 }

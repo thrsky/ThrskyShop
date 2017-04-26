@@ -131,4 +131,21 @@ public class OrderItem {
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
     }
+
+    @Override
+    public String toString() {
+        return "OrderItem{" +
+                "id=" + id +
+                ", userId=" + userId +
+                ", orderNo=" + orderNo +
+                ", productId=" + productId +
+                ", productName='" + productName + '\'' +
+                ", productImage='" + productImage + '\'' +
+                ", currentUnitPrice=" + currentUnitPrice +
+                ", quantity=" + quantity +
+                ", totalPrice=" + totalPrice +
+                ", createTime=" + createTime +
+                ", updateTime=" + updateTime +
+                '}';
+    }
 }
