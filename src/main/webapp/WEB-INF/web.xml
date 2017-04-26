@@ -49,7 +49,7 @@
 
 
 
-    <!-- 根据ResFul 规范 - URL设计成下面这样-->
+    <!-- 根据ResFul 规范 - URL设计成下面这样 不要设计成以前的.do  太难看-->
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>/shop/*</url-pattern>
