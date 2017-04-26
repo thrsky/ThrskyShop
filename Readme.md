@@ -10,3 +10,4 @@
 
 >* datasource.properties 中配置mysql.jar包时需要用绝对路径，如果有人要直接copy我的代码的话请修改路径
 
+>* 在mapper文件中 对createTime 和  updateTime 时间戳进行更新 用db的语法来控制，不用Java的语法
