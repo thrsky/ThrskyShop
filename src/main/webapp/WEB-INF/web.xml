@@ -4,6 +4,7 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
          id="WebApp_ID" version="2.5">
 
+    <!-- web配置文件 -->
     <display-name>Archetype Created Web Application</display-name>
 
     <filter>
@@ -48,6 +49,7 @@
 
 
 
+    <!-- 根据ResFul 规范 - URL设计成下面这样-->
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>/shop/*</url-pattern>
