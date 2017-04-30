@@ -21,6 +21,7 @@
     </filter>
 
     <!-- 拦截器 -->
+    <!-- 为什么不拦截以前的.do  看下面 -->
     <filter-mapping>
         <filter-name>characterEncodingFilter</filter-name>
         <url-pattern>/*</url-pattern>
