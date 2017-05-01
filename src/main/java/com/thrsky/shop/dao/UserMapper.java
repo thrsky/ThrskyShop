@@ -1,6 +1,7 @@
 package com.thrsky.shop.dao;
 
 import com.thrsky.shop.pojo.User;
+import org.apache.ibatis.annotations.Param;
 
 public interface UserMapper {
 
@@ -15,4 +16,8 @@ public interface UserMapper {
     int updateByPrimaryKeySelective(User record);
 
     int updateByPrimaryKey(User record);
+
+    int checkUserName(String username);
+
+    User userLogin(@Param("username") String username, @Param("password") String password);
 }
