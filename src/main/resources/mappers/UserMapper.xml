@@ -181,4 +181,10 @@
     select count(1) FROM mmall_user
     WHERE username=#{username} and question=#{question} and answer=#{answer}
   </select>
+  
+  <update id="updatePasswdByUserName" resultType="int" parameterType="map">
+      UPDATE mmall_user
+      set password = #{password} ,update_time = now()
+      where username = #{username}
+  </update>
 </mapper>
