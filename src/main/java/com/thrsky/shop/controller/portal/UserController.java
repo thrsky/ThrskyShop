@@ -2,15 +2,13 @@ package com.thrsky.shop.controller.portal;
 
 import com.thrsky.shop.common.Const;
 import com.thrsky.shop.common.LoginEnum;
+import com.thrsky.shop.common.ResponseCode;
 import com.thrsky.shop.common.ServerResponse;
 import com.thrsky.shop.pojo.User;
 import com.thrsky.shop.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 
@@ -88,5 +86,43 @@ public class UserController {
     @ResponseBody
     public ServerResponse<String> forgetResetPassword(String username,String passwordNew,String forgetToken){
         return iUserService.forgetResetPassword(username,passwordNew,forgetToken);
+    }
+
+    @GetMapping(value = "ResetPassword")
+    @ResponseBody
+    //登录状态下的修改密码
+    public ServerResponse<String> resetPassword(HttpSession session,String passwordNew,String passwordOld){
+        User user = (User) session.getAttribute(Const.USERNAME);
+        if(user == null){
+            return ServerResponse.createByError("用户未登录");
+        }
+        return iUserService.resetPassword(passwordNew,passwordOld,user);
+    }
+
+    @PostMapping(value = "updateInformation")
+    @ResponseBody
+    public ServerResponse<User> update_information(HttpSession session,User user){
+        User currentUser = (User)session.getAttribute(Const.CURRENT_USER);
+        if(currentUser == null){
+            return ServerResponse.createByError("用户未登录");
+        }
+        user.setId(currentUser.getId());
+        user.setUsername(currentUser.getUsername());
+        ServerResponse<User> response = iUserService.updateInformation(user);
+        if(response.isSuccess()){
+            response.getData().setUsername(currentUser.getUsername());
+            session.setAttribute(Const.CURRENT_USER,response.getData());
+        }
+        return response;
+    }
+
+    @PostMapping(value = "getInformation")
+    @ResponseBody
+    public ServerResponse<User> get_information(HttpSession session){
+        User currentUser = (User)session.getAttribute(Const.CURRENT_USER);
+        if(currentUser == null){
+            return ServerResponse.createByErrorCodeMessage(ResponseCode.NEED_LOGIN.getCode(),"未登录,需要强制登录status=10");
+        }
+        return iUserService.getInformation(currentUser.getId());
     }
 }

@@ -28,4 +28,8 @@ public interface UserMapper {
     int checkAnswer(@Param("username")String username,@Param("answer")String answer,@Param("question")String question);
 
     int updatePasswdByUserName(@Param("username")String username,@Param("password")String password);
+
+    int checkPassword(@Param("password")String password,@Param("userId") int userId);
+
+    int checkEmailByUserId(@Param("email") String email,@Param("userId") int userId);
 }
