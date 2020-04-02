@@ -1,3 +1,5 @@
+> 本项目，只适合Java初学者
+
 ⚠️注意点:这个项目只包含后端，并没有前端页面，而且是根据慕课网的项目改编而来，其中的很多设计和框架，在如今看来都已经有点过时，请酌情参考
 
 
@@ -90,9 +92,3 @@
 >* 查询在购物车里的产品数量
 >* 购物车全选
 >* 购物车取消全选
-
-<head> 
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script> 
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/v4-shims.js"></script> 
-</head> 
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
